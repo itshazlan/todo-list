@@ -1,2 +1,20 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+
+:root {
+	--ion-color-warna-baru: #29ff57;
+	--ion-color-warna-baru-rgb: 41,255,87;
+	--ion-color-warna-baru-contrast: #000000;
+	--ion-color-warna-baru-contrast-rgb: 0,0,0;
+	--ion-color-warna-baru-shade: #24e04d;
+	--ion-color-warna-baru-tint: #3eff68;
+}
+
+.ion-color-warna-baru {
+	--ion-color-base: var(--ion-color-warna-baru);
+	--ion-color-base-rgb: var(--ion-color-warna-baru-rgb);
+	--ion-color-contrast: var(--ion-color-warna-baru-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-warna-baru-contrast-rgb);
+	--ion-color-shade: var(--ion-color-warna-baru-shade);
+	--ion-color-tint: var(--ion-color-warna-baru-tint);
+}
