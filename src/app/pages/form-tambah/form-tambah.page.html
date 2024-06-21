@@ -20,22 +20,21 @@
     </ion-list-header>
 
     <div class="ion-padding">
-      <ion-input type="text" label="Nama" label-placement="floating" fill="outline"
-        [value]="value!.nama"></ion-input>
+      <ion-input type="text" label="Nama" label-placement="floating" fill="outline" [value]=""></ion-input>
       <br>
-      <ion-input type="text" label="Alamat" label-placement="floating" fill="outline"
-        [value]="value!.alamat"></ion-input>
+      <ion-input type="text" label="Alamat" label-placement="floating" fill="outline" [value]=""></ion-input>
       <br>
-      <ion-input type="text" label="Hobi" label-placement="floating" fill="outline"
-        [value]="value!.hobi"></ion-input>
-        <br>
-        <ion-input type="text" label="No Telepon" label-placement="floating" fill="outline"
-        [value]="value!.hobi"></ion-input>
+      <ion-input type="text" label="Hobi" label-placement="floating" fill="outline" [value]=""></ion-input>
+      <br>
+      <ion-input type="text" label="No Telepon" label-placement="floating" fill="outline" [value]=""></ion-input>
     </div>
   </ion-list>
   <div class="ion-padding ion-text-center">
-    <ion-button shape="round">
+    <ion-button shape="round" expand="block" id="present-alert">
       Simpan
     </ion-button>
   </div>
+
+  <ion-alert trigger="present-alert" header="Konfirmasi" message="Apakah Anda yakin ingin menyimpan data?"
+    [buttons]="alertButtons"></ion-alert>
 </ion-content>

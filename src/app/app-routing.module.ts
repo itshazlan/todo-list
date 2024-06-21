@@ -9,6 +9,14 @@ const routes: Routes = [
   {
     path: 'dashboard',
     loadChildren: () => import('./pages/dashboard/dashboard.module').then( m => m.DashboardPageModule)
+  },
+  {
+    path: 'form-tambah',
+    loadChildren: () => import('./pages/form-tambah/form-tambah.module').then( m => m.FormTambahPageModule)
+  },
+  {
+    path: 'form-details',
+    loadChildren: () => import('./pages/form-details/form-details.module').then( m => m.FormDetailsPageModule)
   }
 ];
 @NgModule({

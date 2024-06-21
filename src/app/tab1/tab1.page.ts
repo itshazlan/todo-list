@@ -13,10 +13,36 @@ export class Tab1Page {
     hobi: 'Memancing',
   };
 
+  public alertButtons = [
+    {
+      text: 'Batal',
+      role: 'cancel',
+      handler: () => {
+        console.log('Alert canceled');
+      },
+    },
+    {
+      text: 'Hapus',
+      role: 'confirm',
+      handler: () => {
+        console.log("Terhapus");
+        
+      },
+    },
+  ];
+
+  setResult(ev: any) {
+    console.log(`Dismissed with role: ${ev.detail.role}`);
+  }
+
   constructor(private router: Router) {}
 
   bukaHalamanDashboard() {
     this.router.navigate(['/dashboard']);
+  }
+
+  bukaHalamanBaru(page: string) {
+    this.router.navigate([page]);
   }
 
   bukaHalamanDenganValue(param: any) {

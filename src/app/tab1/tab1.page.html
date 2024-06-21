@@ -35,25 +35,28 @@
         <ion-card-title>Hamzah Alvana</ion-card-title>
         <ion-card-subtitle>Jalan Juanda</ion-card-subtitle>
       </ion-card-header>
-    
+
       <ion-card-content>
         Here's a small text description for the card content. Nothing more, nothing less.
       </ion-card-content>
-    
-      <ion-button fill="clear" color="success" (click)="bukaHalamanDashboard()">Detail</ion-button>
-      <ion-button fill="clear" color="tertiary">Ubah</ion-button>
-      <ion-button fill="clear" color="danger">Hapus</ion-button>
+
+      <ion-button fill="clear" color="success" (click)="bukaHalamanBaru('/form-details')">Detail</ion-button>
+      <ion-button fill="clear" color="tertiary" (click)="bukaHalamanBaru('/form-tambah')">Ubah</ion-button>
+      <ion-button fill="clear" color="danger" id="present-alert-delete">Hapus</ion-button>
+
+      <ion-alert trigger="present-alert-delete" header="Konfirmasi" message="Apakah Anda yakin ingin menghapus data?"
+        [buttons]="alertButtons"></ion-alert>
     </ion-card>
     <ion-card>
       <ion-card-header>
         <ion-card-title>Card Title</ion-card-title>
         <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
       </ion-card-header>
-    
+
       <ion-card-content>
         Here's a small text description for the card content. Nothing more, nothing less.
       </ion-card-content>
-    
+
       <ion-button fill="clear">Action 1</ion-button>
       <ion-button fill="clear">Action 2</ion-button>
     </ion-card>
@@ -62,11 +65,11 @@
         <ion-card-title>Card Title</ion-card-title>
         <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
       </ion-card-header>
-    
+
       <ion-card-content>
         Here's a small text description for the card content. Nothing more, nothing less.
       </ion-card-content>
-    
+
       <ion-button fill="clear">Action 1</ion-button>
       <ion-button fill="clear">Action 2</ion-button>
     </ion-card>
@@ -75,13 +78,19 @@
         <ion-card-title>Card Title</ion-card-title>
         <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
       </ion-card-header>
-    
+
       <ion-card-content>
         Here's a small text description for the card content. Nothing more, nothing less.
       </ion-card-content>
-    
+
       <ion-button fill="clear">Action 1</ion-button>
       <ion-button fill="clear">Action 2</ion-button>
     </ion-card>
   </ion-list>
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button size="large" color="tertiary" (click)="bukaHalamanBaru('/form-tambah')">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
