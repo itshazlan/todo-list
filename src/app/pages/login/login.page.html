@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger">
+    <ion-title>Halaman Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="login-container">
+    <ion-img src="assets/icon/favicon.png"></ion-img>
+    <h2 class="welcome-text">Selamat datang di Toko Hamzah!</h2>
+
+    <form (ngSubmit)="login()">
+      <div class="login-form">
+        <ion-input label="Email" label-placement="floating" fill="solid" [(ngModel)]="formLogin.email"
+          [ngModelOptions]="{standalone: true}"></ion-input>
+        <br />
+        <ion-input label="Password" label-placement="floating" fill="solid" [(ngModel)]="formLogin.password"
+          [ngModelOptions]="{standalone: true}"></ion-input>
+      </div>
+      <br>
+      <ion-button type="submit" expand="block">Login</ion-button>
+    </form>
+  </div>
+</ion-content>

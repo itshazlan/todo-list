@@ -1,0 +1,54 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger">
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Home</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    <ion-card *ngFor="let produk of dataProduk">
+      <ion-item lines="none">
+        <ion-thumbnail slot="start">
+          <img [src]="gambar(produk.foto_produk)" />
+        </ion-thumbnail>
+        <ion-label>
+          <ion-card-header>
+            <ion-card-title>{{produk.nama_produk}}</ion-card-title>
+            <ion-card-subtitle>
+              <ion-badge color="primary">{{produk.nama_kategori}}</ion-badge>
+            </ion-card-subtitle>
+          </ion-card-header>
+
+          <ion-card-content>
+            <p>Stok: {{produk.stok}}</p>
+            <p>Harga: {{produk.harga_produk}}</p>
+          </ion-card-content>
+
+          <ion-chip color="primary" outline="true" (click)="bukaModalDetails(produk)">
+            <ion-label>Detail</ion-label>
+          </ion-chip>
+          <ion-chip color="tertiary" outline="true" (click)="bukaModalUbah(produk)">
+            <ion-label>Ubah</ion-label>
+          </ion-chip>
+          <ion-chip color="danger" outline="true" (click)="alertHapusProduk(produk.id_produk)">
+            <ion-label>Hapus</ion-label>
+          </ion-chip>
+        </ion-label>
+      </ion-item>
+    </ion-card>
+  </ion-list>
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button size="large" color="tertiary" (click)="bukaModalTambah()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

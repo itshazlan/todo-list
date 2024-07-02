@@ -1,0 +1,57 @@
+ion-item {
+    --background: transparent;
+    --inner-padding-end: 0;
+}
+
+ion-item::part(native) {
+    padding-left: 0px;
+}
+
+.upload-area {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    cursor: pointer;
+
+    ion-icon {
+        font-size: 2em;
+    }
+
+    .file-info {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+}
+
+.thumbnail-container {
+    margin-left: 16px;
+}
+
+.thumbnail {
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: 5px;
+}
+
+ion-button[type="submit"] {
+    --background: #007bff; // Primary color (blue)
+    --color: white; // Text color
+    --border-radius: 8px; // Rounded corners
+    font-weight: 600; // Bolder text
+
+    &:hover:enabled {
+        // Hover effect when enabled
+        --background: #0069d9; // Slightly darker shade on hover
+    }
+
+    &:active:enabled {
+        // Active (pressed) effect when enabled
+        --background: #0062cc; // Even darker shade when pressed
+    }
+}

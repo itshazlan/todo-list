@@ -1,0 +1,33 @@
+ion-card {
+    --background: #f8f9fa; // Light background
+    border-radius: 12px; // Rounded corners
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); // Subtle shadow
+
+    ion-card-header {
+        padding-bottom: 0; // Remove default padding
+
+        ion-card-subtitle {
+            font-size: 0.9em; // Smaller subtitle
+            color: #6c757d; // Gray color
+        }
+    }
+
+    ion-card-content {
+        padding-top: 16px; // Add some padding
+
+        ion-item {
+            --background: transparent; // Make items transparent
+            --padding-start: 0; // Remove default padding
+            --inner-padding-end: 0;
+
+            ion-label {
+                font-weight: 500; // Bolder labels
+            }
+
+            ion-note {
+                font-size: 0.9em; // Slightly smaller notes
+                color: #495057; // Darker gray
+            }
+        }
+    }
+}

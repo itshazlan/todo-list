@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger">
+    <ion-title>
+      Detail Produk
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs" (click)="dismiss()"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Detail Produk</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ produk.nama_produk }}</ion-card-title>
+      <ion-card-subtitle>{{ produk.nama_kategori }}</ion-card-subtitle>
+    </ion-card-header>
+    <br>
+    <ion-img *ngIf="produk.foto_produk" src="https://belajarflutter.myternak.com/produk/download.jpg"
+      alt="Product Image"></ion-img>
+
+    <ion-card-content>
+      <ion-item lines="none">
+        <ion-label>Berat:</ion-label>
+        <ion-note slot="end">{{ produk.berat }}</ion-note>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label>Stok:</ion-label>
+        <ion-note slot="end">{{ produk.stok }}</ion-note>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label>Harga:</ion-label>
+        <ion-note slot="end">Rp {{ produk.harga_produk | number }}</ion-note>
+      </ion-item>
+
+    </ion-card-content>
+  </ion-card>
+</ion-content>

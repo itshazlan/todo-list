@@ -1,0 +1,66 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger">
+    <ion-title>Tambah Produk</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs" (click)="dismiss()"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tambah Produk</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Harap lengkapi data di bawah ini</ion-label>
+    </ion-list-header>
+
+    <div class="ion-padding">
+      <ion-input type="text" label="Nama" label-placement="floating" fill="outline"
+        [(ngModel)]="formProduk.nama_produk"></ion-input>
+      <br>
+      <ion-select label="Kategori Produk" label-placement="floating" fill="outline" cancelText="Batal" okText="Pilih"
+        [(ngModel)]="formProduk.kategori_produk">
+        <ion-select-option [value]="kat.id_kategori"
+          *ngFor="let kat of kategoriProduk">{{kat.nama_kategori}}</ion-select-option>
+      </ion-select>
+      <br>
+      <ion-input type="text" label="Berat" label-placement="floating" fill="outline"
+        [(ngModel)]="formProduk.berat_produk"></ion-input>
+      <br>
+      <ion-input type="text" label="Stok" label-placement="floating" fill="outline"
+        [(ngModel)]="formProduk.stok_produk"></ion-input>
+      <br>
+      <ion-input type="text" label="Harga" label-placement="floating" fill="outline"
+        [(ngModel)]="formProduk.harga_produk"></ion-input>
+      <br>
+      <ion-textarea label="Deskripsi" label-placement="floating" fill="outline" rows="6"
+        [(ngModel)]="formProduk.deskripsi_produk" name="deskripsi_produk"></ion-textarea>
+      <br>
+      <ion-item lines="none">
+        <input #fileInput type="file" hidden accept="image/*" (change)="onImageSelected($event)" />
+
+        <div class="upload-area" (click)="fileInput.click()">
+          <ion-icon *ngIf="!gambarProduk" name="cloud-upload-outline" color="primary" size="large"></ion-icon>
+          <span *ngIf="!gambarProduk">Upload Gambar</span>
+          <div *ngIf="gambarProduk" class="file-info">
+            <div class="thumbnail-container" *ngIf="thumbnailUrl">
+              <img [src]="thumbnailUrl" alt="Thumbnail" class="thumbnail" />
+            </div>
+            <span class="ion-text-wrap">{{ gambarProduk.name }}</span>
+          </div>
+        </div>
+      </ion-item>
+    </div>
+  </ion-list>
+  <div class="ion-padding ion-text-center">
+    <ion-button type="submit" expand="block" (click)="alertTambahProduk()">
+      <ion-icon slot="start" name="checkmark-circle-outline"></ion-icon>
+      Simpan
+    </ion-button>
+  </div>
+</ion-content>
